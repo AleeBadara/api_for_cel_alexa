@@ -41,6 +41,7 @@ app.patch('/majEnvBranche/:env', (req, res) => {
 
 });
 
-app.listen(3003, () => {
-    console.log('app listening at port 3003');
+const PORT= process.env || 3003
+app.listen(PORT, () => {
+    console.log('app listening at port', PORT);
 })
