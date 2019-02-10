@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 
 app.get('/envBranche/:env', (req, res) => {
     const env = req.params.env;
-    InstallEnv.find({ env: env }).then((doc) => {
-        res.send(doc);
+    InstallEnv.find({ env: env }).then((docs) => {
+        res.send(docs[0]);
     }, (e) => {
         res.status(400).send(e);
     })
